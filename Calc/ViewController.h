@@ -10,9 +10,15 @@
 
 @interface ViewController : UIViewController
 
-@property (nonatomic, strong)   IBOutlet UILabel *display;
+@property (nonatomic, strong) IBOutlet UILabel *display;
+@property (nonatomic, strong) IBOutlet UIButton *ac;
 
 - (IBAction)digit:(id)sender;
+- (IBAction)operator:(id)sender;
+
+- (IBAction)acPush:(id)sender;
+- (IBAction)pmPush:(id)sender;
+- (IBAction)perPush:(id)sender;
 
 
 @end

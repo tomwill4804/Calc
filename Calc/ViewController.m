@@ -75,6 +75,7 @@
     //  add digit (character) to number
     //
     number = [number stringByAppendingString:btn.titleLabel.text];
+    self.ac.titleLabel.text = @"C";
     
     
     //
@@ -86,7 +87,9 @@
         if (!period)
             numDigits++;
     
-    
+    //
+    //  reformat display
+    //
     [self showNumber:number];
     
 }
