@@ -10,6 +10,10 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, strong)   IBOutlet UILabel *display;
+
+- (IBAction)digit:(id)sender;
+
 
 @end
 

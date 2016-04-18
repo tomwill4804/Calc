@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999,999,999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4p0-1S-oNh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999,999,999" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4p0-1S-oNh">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="60"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -29,19 +29,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uo1-4Z-BvT">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAT-0N-qrw">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="C"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
-                                        </variation>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dd5-xh-4U0">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -68,21 +55,34 @@
                                             <rect key="frame" x="170" y="0.0" width="85" height="85"/>
                                         </variation>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAT-0N-qrw">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="AC"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
+                                        </variation>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.29942375886524825" colorSpace="calibratedWhite"/>
                                 <variation key="default">
                                     <mask key="subviews">
-                                        <exclude reference="TAT-0N-qrw"/>
                                         <exclude reference="Dd5-xh-4U0"/>
                                         <exclude reference="CDU-P5-XE8"/>
+                                        <exclude reference="TAT-0N-qrw"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="20" y="150" width="255" height="85"/>
                                     <mask key="subviews">
-                                        <include reference="TAT-0N-qrw"/>
                                         <include reference="Dd5-xh-4U0"/>
                                         <include reference="CDU-P5-XE8"/>
+                                        <include reference="TAT-0N-qrw"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -101,6 +101,9 @@
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9QB-nf-jjT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrH-Cg-cCP">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -114,6 +117,9 @@
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="170" y="0.0" width="85" height="85"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Isa-ca-766"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RJD-PF-PHc">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -127,6 +133,9 @@
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="85" y="0.0" width="85" height="85"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4lp-77-XI3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <variation key="default">
@@ -160,6 +169,9 @@
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zho-ZS-gXy"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7bk-kJ-gnj">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -173,6 +185,9 @@
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="170" y="0.0" width="85" height="85"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="29b-VJ-u75"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k38-yB-SlW">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -186,6 +201,9 @@
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="85" y="0.0" width="85" height="85"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qBs-wf-A35"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <variation key="default">
@@ -219,6 +237,9 @@
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="anb-JA-njG"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeL-g8-tK7">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -232,6 +253,9 @@
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="170" y="0.0" width="85" height="85"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lcz-On-B3Y"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3H6-dy-sc1">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -245,6 +269,9 @@
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="85" y="0.0" width="85" height="85"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YlA-jL-8mc"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <variation key="default">
@@ -359,7 +386,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7B-4P-MOJ">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="     0"/>
+                                        <state key="normal" title="0"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
                                                 <integer key="value" value="1"/>
@@ -368,6 +395,9 @@
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="0.0" y="0.0" width="170" height="85"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wKj-11-ixB"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BGM-yf-Y2b">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -381,6 +411,9 @@
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                             <rect key="frame" x="170" y="0.0" width="85" height="85"/>
                                         </variation>
+                                        <connections>
+                                            <action selector="digit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h3q-AR-7cN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <variation key="default">
@@ -424,6 +457,9 @@
                     </view>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="display" destination="4p0-1S-oNh" id="V6I-41-z9A"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
