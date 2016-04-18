@@ -44,30 +44,51 @@
     [self showNumber:number];
     
 }
+
+
+//
+//  build the number we will use for the next operation
+//  and change the display
+//
 - (IBAction)digit:(id)sender{
     
-    if (numDigits < maxDigits) {
-        UIButton *btn = (UIButton *)sender;
-        
-        
-        bool period = ([btn.titleLabel.text isEqualToString:@"."]);
-        NSRange range = [number rangeOfString:@"."];
-        bool hasPeriod = (range.location != NSNotFound);
-        
-        if (period && hasPeriod)
-            return;
-        
-        number = [number stringByAppendingString:btn.titleLabel.text];
-        
-        if ([number characterAtIndex:0] == '0' && !period && !hasPeriod)
-            number = [number substringFromIndex:1];
-        else
-            if (!period)
-                numDigits++;
-  
-        
-        [self showNumber:number];
-    }
+    //
+    //  too many digits?
+    //
+    if (numDigits >= maxDigits)
+        return;
+    
+    UIButton *btn = (UIButton *)sender;
+    
+    //
+    //  see if current key is a period
+    //  or we already have a period
+    //
+    bool period = ([btn.titleLabel.text isEqualToString:@"."]);
+    NSRange range = [number rangeOfString:@"."];
+    bool hasPeriod = (range.location != NSNotFound);
+    
+    if (period && hasPeriod)
+        return;
+    
+    //
+    //  add digit (character) to number
+    //
+    number = [number stringByAppendingString:btn.titleLabel.text];
+    
+    
+    //
+    //  remove leading "0"
+    //
+    if ([number characterAtIndex:0] == '0' && !period && !hasPeriod)
+        number = [number substringFromIndex:1];
+    else
+        if (!period)
+            numDigits++;
+    
+    
+    [self showNumber:number];
+    
 }
 
 @end
