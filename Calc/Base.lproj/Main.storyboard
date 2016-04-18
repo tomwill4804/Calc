@@ -315,7 +315,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
                                         </variation>
                                         <connections>
-                                            <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cxt-WZ-9vf"/>
+                                            <action selector="oper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="23n-Jf-7Ga"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQl-GE-VNV">
@@ -331,7 +331,7 @@
                                             <rect key="frame" x="0.0" y="85" width="85" height="85"/>
                                         </variation>
                                         <connections>
-                                            <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OPH-wm-yxn"/>
+                                            <action selector="oper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ul-Qk-npv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKE-1t-RQy">
@@ -347,7 +347,7 @@
                                             <rect key="frame" x="0.0" y="170" width="85" height="85"/>
                                         </variation>
                                         <connections>
-                                            <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ihF-HX-2PI"/>
+                                            <action selector="oper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FK5-Tf-hul"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xao-rq-zJD">
@@ -363,7 +363,7 @@
                                             <rect key="frame" x="0.0" y="255" width="85" height="85"/>
                                         </variation>
                                         <connections>
-                                            <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uTl-7M-nvK"/>
+                                            <action selector="oper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lti-W7-tCK"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJK-iz-wBY">
@@ -379,7 +379,7 @@
                                             <rect key="frame" x="0.0" y="340" width="85" height="85"/>
                                         </variation>
                                         <connections>
-                                            <action selector="operator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QRI-V1-HdZ"/>
+                                            <action selector="oper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FtH-YZ-Utf"/>
                                         </connections>
                                     </button>
                                 </subviews>

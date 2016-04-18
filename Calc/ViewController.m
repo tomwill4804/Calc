@@ -31,15 +31,17 @@
 
 - (void) resetNumber {
     
-    numDigits = 1;
+    numDigits = 0;
     number = @"0";
     
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     
     maxDigits = 9;
+    total = 0.0;
     [self resetNumber];
     [self showNumber:number];
     
@@ -91,7 +93,54 @@
     //  reformat display
     //
     [self showNumber:number];
+
+
+}
+
+
+
+//
+//  operator button
+//
+- (IBAction)oper:(id)sender{
+    
     
 }
+
+
+//
+//  clear button
+//
+- (IBAction)acPush:(id)sender{
+    
+    if ([self.ac.titleLabel.text isEqualToString:@"AC"])
+        total = 0.0;
+    
+    self.ac.titleLabel.text = @"AC";
+    [self resetNumber];
+    [self showNumber:number];
+    
+    
+}
+
+
+//
+//  plus minus button
+//
+- (IBAction)pmPush:(id)sender{
+    
+    
+}
+
+
+
+//
+//  percent button
+//
+- (IBAction)perPush:(id)sender{
+    
+    
+}
+
 
 @end
