@@ -34,12 +34,6 @@
     
 }
 
-- (void) resetOperand {
-    
-    numDigits = 0;
-    operand = @"0";
-    
-}
 
 - (void)viewDidLoad {
     
@@ -113,18 +107,26 @@
 //
 - (IBAction)oper:(id)sender{
     
+    //
+    //  do calc on last operand
+    //
     reset = NO;
     if (numDigits > 0 || sender == self.equal) {
         self.display.text = [brain doCalc:operand];
     }
 
-    
+    //
+    //  set operator (type of calculation) based on button tag
+    //
     if (sender != self.equal) {
         UIButton *btn = (UIButton *)sender;
         brain.oper = (int)btn.tag;
     } else
         reset = YES;
     
+    //
+    //  any new number entered should start over
+    //
     numDigits = 0;
     
 }
@@ -135,11 +137,19 @@
 //
 - (IBAction)acPush:(id)sender{
     
+    //
+    //  if in "AC" mode init a new brain
+    //
     if ([self.ac.titleLabel.text isEqualToString:@"AC"])
         brain = [[CalculatorBrain alloc] init];
     
+    //
+    //  make sure text is set to "AC"
+    //  clear number on display
+    //
     self.ac.titleLabel.text = @"AC";
-    [self resetOperand];
+    numDigits = 0;
+    operand = @"0";
     [self showNumber:operand];
     
     
