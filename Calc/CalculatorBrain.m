@@ -11,6 +11,15 @@
 @implementation CalculatorBrain
 
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _total = 0.0;
+    }
+    return self;
+}
+
 -(void) doCalc:(NSString *) operator {
     
     
@@ -35,7 +44,6 @@
         case operDivide:
             self.total /= operValue;
             break;
-            
             
     }
     

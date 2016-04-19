@@ -55,6 +55,12 @@
 - (IBAction)digit:(id)sender{
     
     //
+    //  new number started
+    //
+    if (numDigits == 0)
+        operand = @"0";
+    
+    //
     //  too many digits?
     //
     if (numDigits >= maxDigits)
@@ -100,15 +106,16 @@
 - (IBAction)oper:(id)sender{
     
     if (numDigits > 0 || sender == self.equal) {
-        [brain.doCalc operator];
+        [brain doCalc:operand];
         [self showNumber:[NSString stringWithFormat:@"%0.1f", brain.total]];
-        numDigits = 0;
     }
     
     if (sender != self.equal) {
         UIButton *btn = (UIButton *)sender;
         brain.oper = (int)btn.tag;
     }
+    
+    numDigits = 0;
     
 }
 
