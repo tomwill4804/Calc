@@ -8,6 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
+enum CalcOperator {
+
+    operNull = 0,
+    operAdd,
+    operSubtract,
+    operMult,
+    operDivide
+    
+};
+
+
 @interface CalculatorBrain : NSObject
+
+@property float total;
+@property enum CalcOperator oper;
+
 
 @end

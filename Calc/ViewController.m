@@ -13,10 +13,8 @@
     
     CalculatorBrain *brain;
     
-    float total;
     int maxDigits;
     int numDigits;
-    int operation;
     NSString *number;
     
 }
