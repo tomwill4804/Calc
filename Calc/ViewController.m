@@ -17,6 +17,8 @@
     int numDigits;
     NSString *operand;
     
+    bool reset;
+    
 }
 
 @end
@@ -43,6 +45,7 @@
     [super viewDidLoad];
     
     maxDigits = 9;
+    reset = NO;
     [self acPush:nil];
     
 }
@@ -53,6 +56,12 @@
 //  and change the display
 //
 - (IBAction)digit:(id)sender{
+    
+    //
+    //  new brain if "=" was used last time
+    //
+    if (reset == YES)
+        brain = brain = [[CalculatorBrain alloc] init];
     
     //
     //  new number started
@@ -104,15 +113,18 @@
 //
 - (IBAction)oper:(id)sender{
     
+    reset = NO;
     if (numDigits > 0 || sender == self.equal) {
         [brain doCalc:operand];
         [self showNumber:[NSString stringWithFormat:@"%0.1f", brain.total]];
     }
+
     
     if (sender != self.equal) {
         UIButton *btn = (UIButton *)sender;
         brain.oper = (int)btn.tag;
-    }
+    } else
+        reset = YES;
     
     numDigits = 0;
     
