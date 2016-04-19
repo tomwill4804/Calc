@@ -27,6 +27,7 @@
     switch (self.oper) {
             
         case operNull:
+            self.total = operValue;
             break;
             
         case operAdd:

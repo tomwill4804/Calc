@@ -87,9 +87,8 @@
     //
     if ([operand characterAtIndex:0] == '0' && ![operand containsString:@"."])
         operand = [operand substringFromIndex:1];
-    else
-        if (sender != self.period)
-            numDigits++;
+    if (sender != self.period)
+        numDigits++;
     
     //
     //  reformat display
