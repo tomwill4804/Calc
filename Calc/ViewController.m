@@ -27,6 +27,7 @@
 
 @implementation ViewController
 
+
 - (void) showNumber:(NSString*) num{
     
     self.display.text = [NSString stringWithFormat:@"%@", num];
@@ -89,16 +90,15 @@
     //
     operand = [operand stringByAppendingString:btn.titleLabel.text];
     self.ac.titleLabel.text = @"C";
-    
+    if (sender != self.period || numDigits == 0)
+        numDigits++;
     
     //
     //  remove leading "0"
     //
     if ([operand characterAtIndex:0] == '0' && ![operand containsString:@"."])
         operand = [operand substringFromIndex:1];
-    if (sender != self.period)
-        numDigits++;
-    
+
     //
     //  reformat display
     //
@@ -115,8 +115,7 @@
     
     reset = NO;
     if (numDigits > 0 || sender == self.equal) {
-        [brain doCalc:operand];
-        [self showNumber:[NSString stringWithFormat:@"%0.1f", brain.total]];
+        self.display.text = [brain doCalc:operand];
     }
 
     

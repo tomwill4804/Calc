@@ -20,8 +20,9 @@
     return self;
 }
 
--(void) doCalc:(NSString *) operator {
+-(NSString *) doCalc:(NSString *) operator {
     
+    NSString *retValue;
     
     float operValue = [operator floatValue];
     switch (self.oper) {
@@ -47,6 +48,10 @@
             break;
             
     }
+    
+    retValue = [NSString stringWithFormat:@"%0.1f", self.total];
+    
+    return(retValue);
     
 }
 
