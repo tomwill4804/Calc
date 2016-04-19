@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-enum CalcOperator {
+enum OperatorType {
 
     operNull = 0,
     operAdd,
@@ -22,7 +22,7 @@ enum CalcOperator {
 @interface CalculatorBrain : NSObject
 
 @property float total;
-@property enum CalcOperator operator;
+@property enum OperatorType operator;
 
 -(NSString *) doCalc:(NSString *) operand;
 

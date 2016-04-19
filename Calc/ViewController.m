@@ -59,7 +59,7 @@
         brain = brain = [[CalculatorBrain alloc] init];
     
     //
-    //  new number started
+    //  new number started?
     //
     if (numDigits == 0)
         operand = @"0";
@@ -126,7 +126,7 @@
         reset = YES;
     
     //
-    //  any new number entered should start over
+    //  any new number entered now should start over
     //
     numDigits = 0;
     
