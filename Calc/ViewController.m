@@ -30,7 +30,7 @@
 
 - (void) showNumber:(NSString*) num{
     
-    self.display.text = [NSString stringWithFormat:@"%@", num];
+    self.displayLabel.text = [NSString stringWithFormat:@"%@", num];
     
 }
 
@@ -76,15 +76,15 @@
     //  see if current key is a period
     //  or we already have a period
     //
-    if (sender == self.period && [operand containsString:@"."])
+    if (sender == self.periodButton && [operand containsString:@"."])
         return;
     
     //
     //  add digit (character) to number
     //
     operand = [operand stringByAppendingString:btn.titleLabel.text];
-    self.ac.titleLabel.text = @"C";
-    if (sender != self.period || numDigits == 0)
+    self.acButton.titleLabel.text = @"C";
+    if (sender != self.periodButton || numDigits == 0)
         numDigits++;
     
     //
@@ -111,14 +111,14 @@
     //  do calc on last operand
     //
     reset = NO;
-    if (numDigits > 0 || sender == self.equal) {
-        self.display.text = [brain doCalc:operand];
+    if (numDigits > 0 || sender == self.equalButton) {
+        self.displayLabel.text = [brain doCalc:operand];
     }
 
     //
     //  set operator (type of calculation) based on button tag
     //
-    if (sender != self.equal) {
+    if (sender != self.equalButton) {
         UIButton *btn = (UIButton *)sender;
         brain.oper = (int)btn.tag;
     } else
@@ -140,14 +140,14 @@
     //
     //  if in "AC" mode init a new brain
     //
-    if ([self.ac.titleLabel.text isEqualToString:@"AC"])
+    if ([self.acButton.titleLabel.text isEqualToString:@"AC"])
         brain = [[CalculatorBrain alloc] init];
     
     //
     //  make sure text is set to "AC"
     //  clear number on display
     //
-    self.ac.titleLabel.text = @"AC";
+    self.acButton.titleLabel.text = @"AC";
     numDigits = 0;
     operand = @"0";
     [self showNumber:operand];
