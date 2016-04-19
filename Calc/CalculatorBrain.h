@@ -24,5 +24,7 @@ enum CalcOperator {
 @property float total;
 @property enum CalcOperator oper;
 
+-(void) doCalc:(NSString *) operator;
+
 
 @end

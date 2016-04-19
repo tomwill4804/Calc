@@ -15,7 +15,7 @@
     
     int maxDigits;
     int numDigits;
-    NSString *number;
+    NSString *operand;
     
 }
 
@@ -31,10 +31,10 @@
     
 }
 
-- (void) resetNumber {
+- (void) resetOperand {
     
     numDigits = 0;
-    number = @"0";
+    operand = @"0";
     
 }
 
@@ -43,9 +43,7 @@
     [super viewDidLoad];
     
     maxDigits = 9;
-    total = 0.0;
-    [self resetNumber];
-    [self showNumber:number];
+    [self acPush:nil];
     
 }
 
@@ -68,33 +66,29 @@
     //  see if current key is a period
     //  or we already have a period
     //
-    bool period = ([btn.titleLabel.text isEqualToString:@"."]);
-    NSRange range = [number rangeOfString:@"."];
-    bool hasPeriod = (range.location != NSNotFound);
-    
-    if (period && hasPeriod)
+    if (sender == self.period && [operand containsString:@"."])
         return;
     
     //
     //  add digit (character) to number
     //
-    number = [number stringByAppendingString:btn.titleLabel.text];
+    operand = [operand stringByAppendingString:btn.titleLabel.text];
     self.ac.titleLabel.text = @"C";
     
     
     //
     //  remove leading "0"
     //
-    if ([number characterAtIndex:0] == '0' && !period && !hasPeriod)
-        number = [number substringFromIndex:1];
+    if ([operand characterAtIndex:0] == '0' && ![operand containsString:@"."])
+        operand = [operand substringFromIndex:1];
     else
-        if (!period)
+        if (sender != self.period)
             numDigits++;
     
     //
     //  reformat display
     //
-    [self showNumber:number];
+    [self showNumber:operand];
 
 }
 
@@ -105,6 +99,16 @@
 //
 - (IBAction)oper:(id)sender{
     
+    if (numDigits > 0 || sender == self.equal) {
+        [brain.doCalc operator];
+        [self showNumber:[NSString stringWithFormat:@"%0.1f", brain.total]];
+        numDigits = 0;
+    }
+    
+    if (sender != self.equal) {
+        UIButton *btn = (UIButton *)sender;
+        brain.oper = (int)btn.tag;
+    }
     
 }
 
@@ -115,11 +119,11 @@
 - (IBAction)acPush:(id)sender{
     
     if ([self.ac.titleLabel.text isEqualToString:@"AC"])
-        total = 0.0;
+        brain = [[CalculatorBrain alloc] init];
     
     self.ac.titleLabel.text = @"AC";
-    [self resetNumber];
-    [self showNumber:number];
+    [self resetOperand];
+    [self showNumber:operand];
     
     
 }
