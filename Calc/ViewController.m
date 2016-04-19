@@ -7,14 +7,18 @@
 //
 
 #import "ViewController.h"
+#import "CalculatorBrain.h"
 
 @interface ViewController () {
+    
+    CalculatorBrain *brain;
     
     float total;
     int maxDigits;
     int numDigits;
     int operation;
     NSString *number;
+    
 }
 
 @end
@@ -94,7 +98,6 @@
     //
     [self showNumber:number];
 
-
 }
 
 
@@ -125,7 +128,7 @@
 
 
 //
-//  plus minus button
+//  plus/minus button
 //
 - (IBAction)pmPush:(id)sender{
     

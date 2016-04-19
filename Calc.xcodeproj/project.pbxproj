@@ -13,6 +13,7 @@
 		E3C8B3ED1CC54AA1002FF9CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C8B3EB1CC54AA1002FF9CD /* Main.storyboard */; };
 		E3C8B3EF1CC54AA1002FF9CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3C8B3EE1CC54AA1002FF9CD /* Assets.xcassets */; };
 		E3C8B3F21CC54AA1002FF9CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3C8B3F01CC54AA1002FF9CD /* LaunchScreen.storyboard */; };
+		E3C8B3FB1CC687C4002FF9CD /* CalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C8B3FA1CC687C4002FF9CD /* CalculatorBrain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		E3C8B3EE1CC54AA1002FF9CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3C8B3F11CC54AA1002FF9CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E3C8B3F31CC54AA1002FF9CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3C8B3F91CC687C4002FF9CD /* CalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorBrain.h; sourceTree = "<group>"; };
+		E3C8B3FA1CC687C4002FF9CD /* CalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorBrain.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				E3C8B3E61CC54AA1002FF9CD /* AppDelegate.m */,
 				E3C8B3E81CC54AA1002FF9CD /* ViewController.h */,
 				E3C8B3E91CC54AA1002FF9CD /* ViewController.m */,
+				E3C8B3F91CC687C4002FF9CD /* CalculatorBrain.h */,
+				E3C8B3FA1CC687C4002FF9CD /* CalculatorBrain.m */,
 				E3C8B3EB1CC54AA1002FF9CD /* Main.storyboard */,
 				E3C8B3EE1CC54AA1002FF9CD /* Assets.xcassets */,
 				E3C8B3F01CC54AA1002FF9CD /* LaunchScreen.storyboard */,
@@ -151,6 +156,7 @@
 			files = (
 				E3C8B3EA1CC54AA1002FF9CD /* ViewController.m in Sources */,
 				E3C8B3E71CC54AA1002FF9CD /* AppDelegate.m in Sources */,
+				E3C8B3FB1CC687C4002FF9CD /* CalculatorBrain.m in Sources */,
 				E3C8B3E41CC54AA1002FF9CD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
