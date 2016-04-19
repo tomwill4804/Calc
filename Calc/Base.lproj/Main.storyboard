@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -27,38 +28,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uo1-4Z-BvT">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dd5-xh-4U0">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="+/-"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="85" y="0.0" width="85" height="85"/>
-                                        </variation>
-                                        <connections>
-                                            <action selector="pmPush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bjY-Fm-Cpe"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDU-P5-XE8">
-                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <state key="normal" title="%"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="170" y="0.0" width="85" height="85"/>
-                                        </variation>
-                                        <connections>
-                                            <action selector="perPush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sS2-eA-lII"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TAT-0N-qrw">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -68,27 +37,99 @@
                                                 <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="85" height="85"/>
-                                        </variation>
                                         <connections>
                                             <action selector="acPush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uSl-an-aXa"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dd5-xh-4U0">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="+/-"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="pmPush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bjY-Fm-Cpe"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDU-P5-XE8">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="85" id="ddU-rC-Oo4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="%"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="ddU-rC-Oo4"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <mask key="constraints">
+                                                <include reference="ddU-rC-Oo4"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="perPush:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sS2-eA-lII"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="0.29942375886524825" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Dd5-xh-4U0" firstAttribute="top" secondItem="Uo1-4Z-BvT" secondAttribute="top" id="03M-PS-NSA"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dd5-xh-4U0" secondAttribute="bottom" id="0eq-ef-WdJ"/>
+                                    <constraint firstItem="Dd5-xh-4U0" firstAttribute="leading" secondItem="TAT-0N-qrw" secondAttribute="trailing" id="9FC-AL-etz"/>
+                                    <constraint firstItem="Dd5-xh-4U0" firstAttribute="width" secondItem="TAT-0N-qrw" secondAttribute="width" id="OXd-gv-26L"/>
+                                    <constraint firstItem="CDU-P5-XE8" firstAttribute="leading" secondItem="Dd5-xh-4U0" secondAttribute="trailing" id="Xjh-MI-2QV"/>
+                                    <constraint firstItem="Dd5-xh-4U0" firstAttribute="baseline" secondItem="CDU-P5-XE8" secondAttribute="baseline" id="bzc-M9-Vg4"/>
+                                    <constraint firstItem="CDU-P5-XE8" firstAttribute="width" secondItem="TAT-0N-qrw" secondAttribute="width" id="gYc-vd-W6F"/>
+                                    <constraint firstItem="Dd5-xh-4U0" firstAttribute="baseline" secondItem="TAT-0N-qrw" secondAttribute="baseline" id="hL5-gg-bf4"/>
+                                    <constraint firstItem="Dd5-xh-4U0" firstAttribute="height" secondItem="TAT-0N-qrw" secondAttribute="height" id="hXn-UW-ZgB"/>
+                                    <constraint firstItem="CDU-P5-XE8" firstAttribute="height" secondItem="TAT-0N-qrw" secondAttribute="height" id="zXw-mU-rkb"/>
+                                </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
+                                        <exclude reference="TAT-0N-qrw"/>
                                         <exclude reference="Dd5-xh-4U0"/>
                                         <exclude reference="CDU-P5-XE8"/>
-                                        <exclude reference="TAT-0N-qrw"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="03M-PS-NSA"/>
+                                        <exclude reference="0eq-ef-WdJ"/>
+                                        <exclude reference="9FC-AL-etz"/>
+                                        <exclude reference="OXd-gv-26L"/>
+                                        <exclude reference="bzc-M9-Vg4"/>
+                                        <exclude reference="hL5-gg-bf4"/>
+                                        <exclude reference="hXn-UW-ZgB"/>
+                                        <exclude reference="Xjh-MI-2QV"/>
+                                        <exclude reference="gYc-vd-W6F"/>
+                                        <exclude reference="zXw-mU-rkb"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="subviews">
+                                        <include reference="TAT-0N-qrw"/>
                                         <include reference="Dd5-xh-4U0"/>
                                         <include reference="CDU-P5-XE8"/>
-                                        <include reference="TAT-0N-qrw"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="03M-PS-NSA"/>
+                                        <include reference="0eq-ef-WdJ"/>
+                                        <include reference="9FC-AL-etz"/>
+                                        <include reference="OXd-gv-26L"/>
+                                        <include reference="bzc-M9-Vg4"/>
+                                        <include reference="hL5-gg-bf4"/>
+                                        <include reference="hXn-UW-ZgB"/>
+                                        <include reference="Xjh-MI-2QV"/>
+                                        <include reference="gYc-vd-W6F"/>
+                                        <include reference="zXw-mU-rkb"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -331,9 +372,6 @@
                                                 <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="85" width="85" height="85"/>
-                                        </variation>
                                         <connections>
                                             <action selector="oper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ul-Qk-npv"/>
                                         </connections>
@@ -347,9 +385,6 @@
                                                 <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="170" width="85" height="85"/>
-                                        </variation>
                                         <connections>
                                             <action selector="oper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FK5-Tf-hul"/>
                                         </connections>
@@ -389,9 +424,6 @@
                                                 <integer key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="340" width="85" height="85"/>
-                                        </variation>
                                         <connections>
                                             <action selector="oper:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FtH-YZ-Utf"/>
                                         </connections>
@@ -423,6 +455,10 @@
                                         <exclude reference="UJK-iz-wBY"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <exclude reference="GG6-t6-zlG"/>
+                                        <exclude reference="czJ-Ha-TA1"/>
+                                        <exclude reference="GIe-TJ-cpr"/>
+                                        <exclude reference="IZD-m6-auy"/>
                                         <exclude reference="5AT-pt-I1D"/>
                                         <exclude reference="C5m-sY-Puf"/>
                                         <exclude reference="OB9-Sf-J42"/>
@@ -433,10 +469,6 @@
                                         <exclude reference="o1N-W6-Xfg"/>
                                         <exclude reference="tuo-kd-EcP"/>
                                         <exclude reference="ul7-KE-g53"/>
-                                        <exclude reference="GG6-t6-zlG"/>
-                                        <exclude reference="GIe-TJ-cpr"/>
-                                        <exclude reference="IZD-m6-auy"/>
-                                        <exclude reference="czJ-Ha-TA1"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
@@ -448,6 +480,10 @@
                                         <include reference="UJK-iz-wBY"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <include reference="GG6-t6-zlG"/>
+                                        <include reference="czJ-Ha-TA1"/>
+                                        <include reference="GIe-TJ-cpr"/>
+                                        <include reference="IZD-m6-auy"/>
                                         <include reference="5AT-pt-I1D"/>
                                         <include reference="C5m-sY-Puf"/>
                                         <include reference="OB9-Sf-J42"/>
@@ -458,10 +494,6 @@
                                         <include reference="o1N-W6-Xfg"/>
                                         <include reference="tuo-kd-EcP"/>
                                         <include reference="ul7-KE-g53"/>
-                                        <include reference="GG6-t6-zlG"/>
-                                        <include reference="GIe-TJ-cpr"/>
-                                        <include reference="IZD-m6-auy"/>
-                                        <include reference="czJ-Ha-TA1"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -526,6 +558,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="4p0-1S-oNh" secondAttribute="trailing" constant="20" id="Ivz-bw-oZJ"/>
                             <constraint firstItem="Uo1-4Z-BvT" firstAttribute="leading" secondItem="RhW-Cm-dcj" secondAttribute="leading" id="LAh-gl-VPi"/>
                             <constraint firstItem="HaC-n1-1Uf" firstAttribute="height" secondItem="4Ea-HS-jMg" secondAttribute="height" id="NSm-MY-5lW"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="TAT-0N-qrw" secondAttribute="leading" id="NWU-BE-SGk"/>
                             <constraint firstItem="Uo1-4Z-BvT" firstAttribute="trailing" secondItem="RhW-Cm-dcj" secondAttribute="trailing" id="Naq-An-sl0"/>
                             <constraint firstItem="p2e-v6-hnL" firstAttribute="leading" secondItem="Uo1-4Z-BvT" secondAttribute="trailing" id="Nyd-Y3-CCB"/>
                             <constraint firstItem="aj9-mq-6vb" firstAttribute="leading" secondItem="4Ea-HS-jMg" secondAttribute="trailing" id="OHa-6p-bRA"/>
@@ -550,6 +583,7 @@
                             <constraint firstItem="3oG-LV-DEN" firstAttribute="height" secondItem="RhW-Cm-dcj" secondAttribute="height" id="wia-F4-Vzr"/>
                             <constraint firstAttribute="leadingMargin" secondItem="4p0-1S-oNh" secondAttribute="leading" id="wvD-n1-MQh"/>
                             <constraint firstItem="Uo1-4Z-BvT" firstAttribute="leading" secondItem="4Ea-HS-jMg" secondAttribute="leading" id="xqt-2T-D34"/>
+                            <constraint firstItem="p2e-v6-hnL" firstAttribute="leading" secondItem="CDU-P5-XE8" secondAttribute="trailing" id="yAk-Bu-dkC"/>
                             <constraint firstAttribute="bottom" secondItem="Uo1-4Z-BvT" secondAttribute="bottom" constant="565" id="zPR-wY-Nki"/>
                             <constraint firstItem="Uo1-4Z-BvT" firstAttribute="trailing" secondItem="3oG-LV-DEN" secondAttribute="trailing" id="zVa-bx-A0T"/>
                             <constraint firstItem="4p0-1S-oNh" firstAttribute="top" secondItem="ohM-ND-D1f" secondAttribute="bottom" constant="45" id="zZZ-mU-tO0"/>
@@ -569,6 +603,7 @@
                                 <exclude reference="Ivz-bw-oZJ"/>
                                 <exclude reference="wvD-n1-MQh"/>
                                 <exclude reference="zZZ-mU-tO0"/>
+                                <exclude reference="NWU-BE-SGk"/>
                                 <exclude reference="8mk-9J-geQ"/>
                                 <exclude reference="AFn-e6-JK8"/>
                                 <exclude reference="LAh-gl-VPi"/>
@@ -594,6 +629,7 @@
                                 <exclude reference="jRV-ZO-xtv"/>
                                 <exclude reference="kFB-NB-33s"/>
                                 <exclude reference="Nyd-Y3-CCB"/>
+                                <exclude reference="yAk-Bu-dkC"/>
                                 <exclude reference="22C-Hr-fei"/>
                                 <exclude reference="2cM-UG-uxt"/>
                                 <exclude reference="Ziw-zK-rgY"/>
@@ -619,6 +655,7 @@
                                 <include reference="Ivz-bw-oZJ"/>
                                 <include reference="wvD-n1-MQh"/>
                                 <include reference="zZZ-mU-tO0"/>
+                                <include reference="NWU-BE-SGk"/>
                                 <include reference="8mk-9J-geQ"/>
                                 <include reference="AFn-e6-JK8"/>
                                 <include reference="LAh-gl-VPi"/>
@@ -644,6 +681,7 @@
                                 <include reference="jRV-ZO-xtv"/>
                                 <include reference="kFB-NB-33s"/>
                                 <include reference="Nyd-Y3-CCB"/>
+                                <include reference="yAk-Bu-dkC"/>
                                 <include reference="22C-Hr-fei"/>
                                 <include reference="2cM-UG-uxt"/>
                                 <include reference="Ziw-zK-rgY"/>
