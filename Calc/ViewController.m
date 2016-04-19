@@ -14,10 +14,10 @@
     CalculatorBrain *brain;
     
     int maxDigits;
-    int numDigits;
-    NSString *operand;
+    int numDigits;       // current number of digits on display
+    NSString *operand;  // current number on display (0=start new number)
     
-    bool reset;
+    bool reset;         // create new brain
     
 }
 
@@ -56,7 +56,7 @@
     //  new brain if "=" was used last time
     //
     if (reset == YES)
-        brain = brain = [[CalculatorBrain alloc] init];
+        brain = [[CalculatorBrain alloc] init];
     
     //
     //  new number started?
@@ -73,8 +73,7 @@
     UIButton *btn = (UIButton *)sender;
     
     //
-    //  see if current key is a period
-    //  or we already have a period
+    //  see if current key is a period and we already have a period
     //
     if (sender == self.periodButton && [operand containsString:@"."])
         return;
@@ -83,8 +82,7 @@
     //  add digit (character) to number
     //
     operand = [operand stringByAppendingString:btn.titleLabel.text];
-    // if ([self.acButton.titleLabel.text containsString:@"AC"])
-        self.acButton.titleLabel.text = @"C";
+    self.acButton.titleLabel.text = @"C";
     if (sender != self.periodButton || numDigits == 0)
         numDigits++;
     
@@ -109,12 +107,11 @@
 - (IBAction)oper:(id)sender{
     
     //
-    //  do calc on last operand
+    //  do calculation on last operand
     //
     reset = NO;
-    if (numDigits > 0 || sender == self.equalButton) {
+    if (numDigits > 0 || sender == self.equalButton)
         [self showNumber:[brain doCalc:operand]];
-    }
 
     //
     //  set operator (type of calculation) based on button tag
@@ -123,7 +120,7 @@
         UIButton *btn = (UIButton *)sender;
         brain.operator = (int)btn.tag;
     } else
-        reset = YES;
+        reset = YES;  // now that equal was done we need to reset
     
     //
     //  any new number entered now should start over
@@ -163,6 +160,25 @@
 - (IBAction)pmPush:(id)sender{
     
     
+    //
+    //  if starting new number then we have done an operation
+    //  and we need to do this on the current brain
+    //
+    if (numDigits == 0) {
+        brain.operator = operNeg;
+        [self showNumber:[brain doCalc:nil]];
+    }
+    else {
+        
+        //
+        //  do this on the display value
+        //
+        float operValue = [operand floatValue];
+        operand = [NSString stringWithFormat:@"%g", operValue * -1];
+        [self showNumber:operand];
+    }
+    
+    
 }
 
 
@@ -171,6 +187,26 @@
 //  percent button
 //
 - (IBAction)perPush:(id)sender{
+    
+    //
+    //  if starting new number then we have done an operation
+    //  and we need to do this on the current brain
+    //
+    if (numDigits == 0) {
+        brain.operator = operPercent;
+        [self showNumber:[brain doCalc:nil]];
+    }
+    else {
+        
+        //
+        //  do this on the display value
+        //
+        float operValue = [operand floatValue];
+        operand = [NSString stringWithFormat:@"%g", operValue / 100];
+        [self showNumber:operand];
+        
+    }
+
     
     
 }

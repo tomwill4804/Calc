@@ -14,7 +14,9 @@ enum OperatorType {
     operAdd,
     operSubtract,
     operMult,
-    operDivide
+    operDivide,
+    operPercent,
+    operNeg
     
 };
 
@@ -22,7 +24,7 @@ enum OperatorType {
 @interface CalculatorBrain : NSObject
 
 @property float total;
-@property enum OperatorType operator;
+@property enum  OperatorType operator;
 
 -(NSString *) doCalc:(NSString *) operand;
 

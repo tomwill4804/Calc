@@ -28,7 +28,10 @@
     //
     //  convert operator to float and do the operation
     //
-    float operValue = [operand floatValue];
+    float operValue;
+    if (operand)
+        operValue = [operand floatValue];
+    
     switch (self.operator) {
             
         case operNull:
@@ -50,6 +53,15 @@
         case operDivide:
             self.total /= operValue;
             break;
+            
+        case operPercent:
+            self.total /= 100.;
+            break;
+
+        case operNeg:
+            self.total *= -1.;
+            break;
+
             
     }
     
