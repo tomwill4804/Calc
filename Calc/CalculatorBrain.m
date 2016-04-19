@@ -49,7 +49,10 @@
             
     }
     
-    retValue = [NSString stringWithFormat:@"%0.1f", self.total];
+    if (self.total == (int)self.total)
+        retValue = [NSString stringWithFormat:@"%d", (int)self.total];
+    else
+        retValue = [NSString stringWithFormat:@"%g", self.total];
     
     return(retValue);
     

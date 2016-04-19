@@ -17,7 +17,7 @@
 
 
 - (IBAction)digit:(id)sender;
-- (IBAction)operator:(id)sender;
+- (IBAction)oper:(id)sender;
 
 - (IBAction)acPush:(id)sender;
 - (IBAction)pmPush:(id)sender;

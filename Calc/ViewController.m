@@ -28,9 +28,9 @@
 @implementation ViewController
 
 
-- (void) showNumber:(NSString*) num{
+- (void) showNumber:(NSString*) str{
     
-    self.displayLabel.text = [NSString stringWithFormat:@"%@", num];
+    self.displayLabel.text = [NSString stringWithFormat:@"%@", str];
     
 }
 
@@ -83,7 +83,8 @@
     //  add digit (character) to number
     //
     operand = [operand stringByAppendingString:btn.titleLabel.text];
-    self.acButton.titleLabel.text = @"C";
+    // if ([self.acButton.titleLabel.text containsString:@"AC"])
+        self.acButton.titleLabel.text = @"C";
     if (sender != self.periodButton || numDigits == 0)
         numDigits++;
     
@@ -112,7 +113,7 @@
     //
     reset = NO;
     if (numDigits > 0 || sender == self.equalButton) {
-        self.displayLabel.text = [brain doCalc:operand];
+        [self showNumber:[brain doCalc:operand]];
     }
 
     //
