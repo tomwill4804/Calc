@@ -61,8 +61,10 @@
     //
     //  new number started?
     //
-    if (numDigits == 0)
+    if (numDigits == 0) {
         operand = @"0";
+        numDigits = 1;
+    }
     
     //
     //  too many digits?
@@ -89,8 +91,10 @@
     //
     //  remove leading "0"
     //
-    if ([operand characterAtIndex:0] == '0' && ![operand containsString:@"."])
+    if ([operand characterAtIndex:0] == '0' && ![operand containsString:@"."]) {
+        numDigits--;
         operand = [operand substringFromIndex:1];
+    }
 
     //
     //  reformat display
