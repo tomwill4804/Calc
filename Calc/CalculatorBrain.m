@@ -16,16 +16,20 @@
     self = [super init];
     if (self) {
         _total = 0.0;
+        _operator = operNull;
     }
     return self;
 }
 
--(NSString *) doCalc:(NSString *) operator {
+-(NSString *) doCalc:(NSString *) operand {
     
     NSString *retValue;
     
-    float operValue = [operator floatValue];
-    switch (self.oper) {
+    //
+    //  convert operator to float and do the operation
+    //
+    float operValue = [operand floatValue];
+    switch (self.operator) {
             
         case operNull:
             self.total = operValue;
@@ -49,6 +53,9 @@
             
     }
     
+    //
+    //  return string from float or int depending on type
+    //
     if (self.total == (int)self.total)
         retValue = [NSString stringWithFormat:@"%d", (int)self.total];
     else

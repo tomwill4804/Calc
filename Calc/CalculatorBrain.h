@@ -22,9 +22,9 @@ enum CalcOperator {
 @interface CalculatorBrain : NSObject
 
 @property float total;
-@property enum CalcOperator oper;
+@property enum CalcOperator operator;
 
--(NSString *) doCalc:(NSString *) operator;
+-(NSString *) doCalc:(NSString *) operand;
 
 
 @end

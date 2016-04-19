@@ -121,7 +121,7 @@
     //
     if (sender != self.equalButton) {
         UIButton *btn = (UIButton *)sender;
-        brain.oper = (int)btn.tag;
+        brain.operator = (int)btn.tag;
     } else
         reset = YES;
     
