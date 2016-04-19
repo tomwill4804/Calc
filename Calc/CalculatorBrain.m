@@ -31,6 +31,8 @@
     float operValue;
     if (operand)
         operValue = [operand floatValue];
+    else
+        operValue = 0.0;
     
     switch (self.operator) {
             
