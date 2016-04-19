@@ -32,6 +32,18 @@
     
     self.displayLabel.text = [NSString stringWithFormat:@"%@", str];
     
+    //
+    //  add commas
+    //
+    
+    if (![self.displayLabel.text containsString:@"e"]) {
+        
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc]init];
+        NSNumber *myNumber = [formatter numberFromString:str];
+        self.displayLabel.text = [NSString localizedStringWithFormat:@"%@", myNumber];
+        
+    }
+    
 }
 
 
