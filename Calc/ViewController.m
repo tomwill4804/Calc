@@ -96,7 +96,7 @@
     //  add digit (character) to number
     //
     operand = [operand stringByAppendingString:btn.titleLabel.text];
-    self.acButton.titleLabel.text = @"C";
+    [self.acButton setTitle:@"C" forState: UIControlStateNormal];
     if (sender != self.periodButton || numDigits == 0)
         numDigits++;
     
@@ -161,7 +161,7 @@
     //  make sure text is set to "AC"
     //  clear number on display
     //
-    self.acButton.titleLabel.text = @"AC";
+    [self.acButton setTitle:@"AC" forState: UIControlStateNormal];
     numDigits = 0;
     operand = @"0";
     [self showNumber:operand];
