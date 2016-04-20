@@ -17,6 +17,8 @@
     int numDigits;       // current number of digits on display
     NSString *operand;  // current number on display (0=start new number)
     
+    bool reset;         // create new brain
+    
 }
 
 @end
@@ -50,6 +52,7 @@
     [super viewDidLoad];
     
     maxDigits = 9;
+    reset = NO;
     [self acPush:nil];
     
 }
@@ -61,6 +64,11 @@
 //
 - (IBAction)digit:(id)sender{
     
+    //
+    //  new brain if "=" was used last time
+    //
+    if (reset == YES)
+        brain = [[CalculatorBrain alloc] init];
     
     //
     //  new number started?
@@ -99,12 +107,12 @@
         numDigits--;
         operand = [operand substringFromIndex:1];
     }
-
+    
     //
     //  reformat display
     //
     [self showNumber:operand];
-
+    
 }
 
 
@@ -117,14 +125,18 @@
     //
     //  do calculation on last operand
     //
+    reset = NO;
     if (numDigits > 0 || sender == self.equalButton)
         [self showNumber:[brain doCalc:operand]];
-
+    
     //
     //  set operator (type of calculation) based on button tag
     //
-    UIButton *btn = (UIButton *)sender;
-    brain.operator = (int)btn.tag;
+    if (sender != self.equalButton) {
+        UIButton *btn = (UIButton *)sender;
+        brain.operator = (int)btn.tag;
+    } else
+        reset = YES;  // now that equal was done we need to reset
     
     //
     //  any new number entered now should start over
@@ -210,10 +222,11 @@
         [self showNumber:operand];
         
     }
-
+    
     
     
 }
 
 
 @end
+
