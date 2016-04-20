@@ -15,9 +15,9 @@
     
     int maxDigits;
     int numDigits;       // current number of digits on display
-    NSString *operand;  // current number on display (0=start new number)
+    NSString *operand;   // current number on display
     
-    bool reset;         // create new brain
+    bool reset;          // create new brain
     
 }
 
